@@ -7,7 +7,21 @@ function ask(question) {
   ]);
 }
 
-function getFortune(question) {}
+function getFortune(question) {
+  const answerArray = [];
+  return tell(question)
+  .then((fortune) => {
+    answerArray.push(`Your question was: ${question}`)
+    answerArray.push(`Your fortune is: ${response}`)
+
+    return answerArray
+  })
+  .catch((error) => {
+    return "There was an error: " + error
+  })
+}
+
+
 
 function fullSession(question) {}
 
